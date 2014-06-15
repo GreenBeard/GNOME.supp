@@ -1,39 +1,41 @@
-glib_supp_FILES := $(wildcard glib/*.supp)
-gio_supp_FILES := $(wildcard gio/*.supp)
-pango_supp_FILES := $(wildcard pango/*.supp)
-gail_supp_FILES := $(wildcard gail/*.supp)
-gdk_supp_FILES := $(wildcard gdk/*.supp)
-gtk_supp_FILES := $(wildcard gtk+/*.supp)
-gtk3_supp_FILES := gtk.supp $(wildcard gtk+/3.x/*.supp)
-gtksourceview_supp_FILES := $(wildcard gtksourceview/*.supp)
+glib_supp_FILES := $(wildcard src/glib/*.supp)
+gio_supp_FILES := $(wildcard src/gio/*.supp)
+pango_supp_FILES := $(wildcard src/pango/*.supp)
+gail_supp_FILES := $(wildcard src/gail/*.supp)
+gdk_supp_FILES := $(wildcard src/gdk/*.supp)
+gtk_supp_FILES := $(wildcard src/gtk+/*.supp)
+gtk3_supp_FILES := build/gtk.supp $(wildcard src/gtk+/3.x/*.supp)
+gtksourceview_supp_FILES := $(wildcard src/gtksourceview/*.supp)
 
-BASE_GENERATED_SUPP_FILES = glib.supp gio.supp pango.supp gail.supp gdk.supp gtk3.supp gtksourceview.supp
-base_supp_FILES = glibc.supp fontconfig.supp $(BASE_GENERATED_SUPP_FILES)
+BASE_GENERATED_SUPP_FILES = build/glib.supp build/gio.supp build/pango.supp build/gail.supp build/gdk.supp build/gtk3.supp build/gtksourceview.supp
+base_supp_FILES = src/glibc.supp src/fontconfig.supp $(BASE_GENERATED_SUPP_FILES)
 
-ALL_GENERATED_SUPP_FILES = $(BASE_GENERATED_SUPP_FILES) gtk.supp base.supp
+ALL_GENERATED_SUPP_FILES = $(BASE_GENERATED_SUPP_FILES) build/gtk.supp build/base.supp
 
 .PHONY: all clean
 
 all: $(ALL_GENERATED_SUPP_FILES)
 
 clean:
-	$(RM) $(ALL_GENERATED_SUPP_FILES)
+	$(RM) -r build
+	mkdir -p build
+	touch build/.keep
 
-glib.supp: $(glib_supp_FILES)
+build/glib.supp: $(glib_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gio.supp: $(gio_supp_FILES)
+build/gio.supp: $(gio_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-pango.supp: $(pango_supp_FILES)
+build/pango.supp: $(pango_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gail.supp: $(gail_supp_FILES)
+build/gail.supp: $(gail_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gdk.supp: $(gdk_supp_FILES)
+build/gdk.supp: $(gdk_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gtk.supp: $(gtk_supp_FILES)
+build/gtk.supp: $(gtk_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gtk3.supp: $(gtk3_supp_FILES)
+build/gtk3.supp: $(gtk3_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-gtksourceview.supp: $(gtksourceview_supp_FILES)
+build/gtksourceview.supp: $(gtksourceview_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
-base.supp: Makefile $(base_supp_FILES)
+build/base.supp: Makefile $(base_supp_FILES)
 	cat -- $(filter %.supp,$^) | sed '/^#/d' >$@

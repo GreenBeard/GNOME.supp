@@ -1,9 +1,2 @@
-base.supp
-gail.supp
-gdk.supp
-gio.supp
-glib.supp
-gtk.supp
-gtk3.supp
-gtksourceview.supp
-pango.supp
+/build
+!/build/.keep
