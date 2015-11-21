@@ -24,9 +24,9 @@ You will need Valgrind, GNU Make, and `sed`.
 
 GNU Make will generate suppression (SUPP) files in the project root. To use them with Valgrind, pass a [`--suppressions=SUPP_FILE`](http://valgrind.org/docs/manual/manual-core.html#opt.suppressions) option for each suppression file that you would like to use. For example, to use the suppressions in `glib.supp`, you would pass `--suppressions=/path/to/GNOME.supp/glib.supp` to Valgrind.
 
-See the [Valgrind page on GNOME Live!](http://live.gnome.org/Valgrind) for tips on using Valgrind to detect memory leaks in GNOME software.
+See the [Valgrind page on the GNOME wiki](https://wiki.gnome.org/Valgrind) for tips on using Valgrind to detect memory leaks in GNOME software.
 
 ## License
-The contents of the suppression files are [Public Domain](http://creativecommons.org/publicdomain/zero/1.0/legalcode).
+The contents of the suppression files are [Public Domain](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
 Any other code is licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html), either version 3 of the GPL, or (at your option) any later version.
