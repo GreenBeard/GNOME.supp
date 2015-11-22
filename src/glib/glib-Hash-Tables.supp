@@ -12,7 +12,7 @@
 
 # Ignore any allocations by g_hash_table_resize(), which are released when the
 # hash table is destroyed. Failure to destroy a hash table will be detected by
-# a leaked g_malloc0_n() in g_hash_table_new_full() (also called by g_hash_table_new()).
+# a leaked slice in g_hash_table_new_full() (also called by g_hash_table_new()).
 {
    g_hash_table_resize() in ghash.c
    Memcheck:Leak

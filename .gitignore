@@ -1,2 +1,7 @@
+*.bin
+*.dSYM
+.DS_Store
+/_old*/
 /build
 !/build/.keep
+/src/empty.c

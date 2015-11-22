@@ -1,0 +1,123 @@
+# -*- tab-width: 3; indent-tabs-mode: nil -*-
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_NSInitializePlatform
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   ...
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   ...
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_ZN16ImageLoaderMachO11doImageInitERKN11ImageLoader11LinkContextE
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_objc_init
+   fun:_os_object_init
+   fun:libSystem_initializer
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:libdispatch_init
+   fun:libSystem_initializer
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:dyld_register_image_state_change_handler
+   fun:_objc_init
+   fun:_os_object_init
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:_ZN12_GLOBAL__N_119AutoreleasePoolPage3popEPv
+   ...
+   fun:-[NSThread init]
+   fun:____NSThreads_block_invoke
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_class_getNonMetaClass
+   fun:lookUpImpOrForward
+   fun:objc_msgSendSuper_stret
+   fun:class_createInstance
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:__29+[__NSDictionaryM initialize]_block_invoke
+   fun:_dispatch_client_callout
+   fun:dispatch_once_f
+   fun:objc_msgSend_fpret
+   fun:_Z28_getObjc2NonlazyCategoryListPK14mach_header_64Pm
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_class_getNonMetaClass
+   fun:lookUpImpOrForward
+   fun:objc_msgSendSuper_stret
+   fun:class_createInstance
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:-[__NSPlaceholderDictionary initWithCapacity:]
+   fun:-[NSThread init]
+   fun:____NSThreads_block_invoke
+   fun:_dispatch_client_callout
+   fun:dispatch_once_f
+   fun:_NSThreadGet0
+}
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:heim_load_frameworks
+}

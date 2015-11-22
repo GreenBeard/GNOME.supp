@@ -12,14 +12,17 @@ base_supp_FILES = src/glibc.supp src/fontconfig.supp $(BASE_GENERATED_SUPP_FILES
 
 ALL_GENERATED_SUPP_FILES = $(BASE_GENERATED_SUPP_FILES) build/gtk.supp build/base.supp
 
-.PHONY: all clean
+.PHONY: all clean test
 
 all: $(ALL_GENERATED_SUPP_FILES)
 
 clean:
-	$(RM) -r build
-	mkdir -p build
-	touch build/.keep
+	$(RM) src/empty.c src/.empty.bin
+	$(RM) $(ALL_GENERATED_SUPP_FILES)
+	$(MAKE) -C test clean
+
+test: all
+	$(MAKE) -C test test
 
 build/glib.supp: $(glib_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
@@ -39,3 +42,11 @@ build/gtksourceview.supp: $(gtksourceview_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
 build/base.supp: Makefile $(base_supp_FILES)
 	cat -- $(filter %.supp,$^) | sed '/^#/d' >$@
+
+src/empty.c:
+	echo '#include <stdlib.h>' >$@
+	echo 'int main() { return EXIT_SUCCESS; }' >>$@
+src/.empty.bin: src/empty.c
+	$(CC) -o $@ $(shell pkg-config --cflags glib-2.0) $+ $(shell pkg-config --libs glib-2.0)
+src/system.supp: src/.empty.bin
+	valgrind --leak-check=full --show-leak-kinds=all --gen-suppressions=all ./$< 2>&1 >/dev/null | ./trim-valgrind-log.awk >$@
