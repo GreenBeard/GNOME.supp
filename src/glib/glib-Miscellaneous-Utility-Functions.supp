@@ -3,7 +3,7 @@
 # https://developer.gnome.org/glib/stable/glib-Miscellaneous-Utility-Functions.html
 
 {
-   <insert_a_suppression_name_here>
+   g_get_application_name()
    Memcheck:Leak
    match-leak-kinds: reachable
    ...
@@ -11,113 +11,105 @@
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_home_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_home_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_host_name()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_host_name
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_prgname()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_prgname
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_real_name()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_real_name
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_system_config_dirs()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_system_config_dirs
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_system_data_dirs()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_system_data_dirs
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_tmp_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_tmp_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_cache_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_cache_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_config_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_config_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_data_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_data_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_name()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_name
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_runtime_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_runtime_dir
 }
 
 {
-   <insert_a_suppression_name_here>
+   g_get_user_special_dir()
    Memcheck:Leak
+   match-leak-kinds: reachable
    ...
    fun:g_get_user_special_dir
-}
-
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   ...
-   fun:g_reload_user_special_dirs_cache
-}
-
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   ...
-   fun:g_set_application_name
-}
-
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   ...
-   fun:g_set_prgname
 }

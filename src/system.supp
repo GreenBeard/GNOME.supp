@@ -121,3 +121,31 @@
    ...
    fun:heim_load_frameworks
 }
+
+# getpwnam(), getpwuid(), getpwnam_r(), and getpwuid_r() may allocate some memory, but it can't
+# be freed.
+# http://man7.org/linux/man-pages/man3/getpwnam.3.html
+{
+   getpwnam()
+   Memcheck:Leak
+   ...
+   fun:getpwnam
+}
+{
+   getpwuid()
+   Memcheck:Leak
+   ...
+   fun:getpwuid
+}
+{
+   getpwnam_r()
+   Memcheck:Leak
+   ...
+   fun:getpwnam_r
+}
+{
+   getpwuid_r()
+   Memcheck:Leak
+   ...
+   fun:getpwuid_r
+}
