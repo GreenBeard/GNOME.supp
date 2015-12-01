@@ -2,7 +2,8 @@ SUPP_FILES = \
 hash_table_0.supp \
 hash_table_1.supp \
 hash_table_2.supp \
-hash_table_3.supp
+hash_table_3.supp \
+listenv.supp
 
 PHONY_TEST_TARGETS = $(patsubst %.supp,test_%,$(SUPP_FILES))
 
