@@ -1,0 +1,25 @@
+# -*- tab-width: 3; indent-tabs-mode: nil -*-
+
+{
+   calloc() within gobject_init_ctor()
+   Memcheck:Leak
+   fun:calloc
+   ...
+   fun:gobject_init_ctor
+}
+
+{
+   malloc() within gobject_init_ctor()
+   Memcheck:Leak
+   fun:malloc
+   ...
+   fun:gobject_init_ctor
+}
+
+{
+   realloc() within gobject_init_ctor()
+   Memcheck:Leak
+   fun:realloc
+   ...
+   fun:gobject_init_ctor
+}

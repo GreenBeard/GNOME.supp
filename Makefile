@@ -1,4 +1,5 @@
 glib_supp_FILES := $(wildcard src/glib/*.supp)
+gobject_supp_FILES := $(wildcard src/gobject/*.supp)
 gio_supp_FILES := $(wildcard src/gio/*.supp)
 pango_supp_FILES := $(wildcard src/pango/*.supp)
 gail_supp_FILES := $(wildcard src/gail/*.supp)
@@ -7,7 +8,7 @@ gtk_supp_FILES := $(wildcard src/gtk+/*.supp)
 gtk3_supp_FILES := build/gtk.supp $(wildcard src/gtk+/3.x/*.supp)
 gtksourceview_supp_FILES := $(wildcard src/gtksourceview/*.supp)
 
-BASE_GENERATED_SUPP_FILES = build/glib.supp build/gio.supp build/pango.supp build/gail.supp build/gdk.supp build/gtk3.supp build/gtksourceview.supp
+BASE_GENERATED_SUPP_FILES = build/glib.supp build/gobject.supp build/gio.supp build/pango.supp build/gail.supp build/gdk.supp build/gtk3.supp build/gtksourceview.supp
 base_supp_FILES = src/glibc.supp src/fontconfig.supp $(BASE_GENERATED_SUPP_FILES)
 
 ALL_GENERATED_SUPP_FILES = $(BASE_GENERATED_SUPP_FILES) build/gtk.supp build/base.supp
@@ -25,6 +26,8 @@ test: all
 	$(MAKE) -C test test
 
 build/glib.supp: $(glib_supp_FILES)
+	cat -- $^ | sed '/^#/d' >$@
+build/gobject.supp: $(gobject_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
 build/gio.supp: $(gio_supp_FILES)
 	cat -- $^ | sed '/^#/d' >$@
