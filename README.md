@@ -30,3 +30,6 @@ See the [Valgrind page on the GNOME wiki](https://wiki.gnome.org/Valgrind) for t
 The contents of the suppression files are [Public Domain](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
 Any other code is licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html), either version 3 of the GPL, or (at your option) any later version.
+
+## Related
+There is a standard set of Valgrind suppressions for GLib and related libraries which might be useful. On Ubuntu systems, they are installed via the libglib2.0-dev package and are found in `/usr/share/glib-2.0/valgrind/glib.supp`
