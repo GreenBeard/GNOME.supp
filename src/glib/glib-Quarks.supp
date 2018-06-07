@@ -1,0 +1,12 @@
+# -*- tab-width: 3; indent-tabs-mode: nil -*-
+
+# https://developer.gnome.org/glib/stable/glib-Quarks.html
+
+{
+   g_quark_init() in gquark.c
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:g_quark_init
+}
+
