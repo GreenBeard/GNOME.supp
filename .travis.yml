@@ -3,7 +3,7 @@ addons:
   apt:
     packages:
       - libaugeas-dev
-      - libglib2.0-0-dbgsym
+      - libglib2.0.0-dbg
       - valgrind
 language: rust
 script:
