@@ -10,3 +10,10 @@
    ...
    fun:g_hash_table_new_full
 }
+# For libglib2.0-0 (2.40.0-2)
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:g_hash_table_resize
+}

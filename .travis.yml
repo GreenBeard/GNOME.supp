@@ -4,6 +4,7 @@ addons:
     packages:
       - libaugeas-dev
       - libglib2.0.0-dbg
+      - libglib2.0-dev
       - valgrind
 language: rust
 script:
