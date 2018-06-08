@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dtrebbien/GNOME.supp.svg?branch=master)](https://travis-ci.org/dtrebbien/GNOME.supp)
+
 This is a repository of [Valgrind suppression files](http://valgrind.org/docs/manual/manual-core.html#manual-core.suppress) intended to be used to detect memory leaks in GNOME software using [Valgrind](http://valgrind.org). The goals of this project are:
 
  1. The suppression files should never suppress a real issue (such as a memory leak).
