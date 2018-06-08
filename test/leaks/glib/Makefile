@@ -26,4 +26,4 @@ $(PHONY_TEST_TARGETS): $(SUPP_FILES)
 .%.bin: %.c
 	$(CC) -g -o $@ $(CFLAGS) $+ $(LIBS)
 %.supp: .%.bin
-	valgrind --num-callers=100 --leak-check=full --show-leak-kinds=all --gen-suppressions=all --suppressions=../../../src/system.supp ./$< 2>&1 >/dev/null | ../../../trim-valgrind-log.awk >$@
+	valgrind --num-callers=100 --leak-check=full --show-leak-kinds=all --gen-suppressions=all --suppressions=../../../src/system.supp --suppressions=../../../src/glib/glib-private.supp ./$< 2>&1 >/dev/null | ../../../trim-valgrind-log.awk >$@
