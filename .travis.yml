@@ -8,5 +8,5 @@ addons:
 language: rust
 script:
   - git clone https://github.com/dtrebbien/valgrind_suppressions_util.git
-  - cd valgrind_suppressions_util; cargo install
+  - (cd valgrind_suppressions_util; cargo install)
   - make test
