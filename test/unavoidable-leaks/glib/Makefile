@@ -1,8 +1,6 @@
 SUPP_FILES = \
-get_application_name.supp \
 get_home_dir.supp \
 get_host_name.supp \
-get_prgname.supp \
 get_real_name.supp \
 get_system_config_dirs.supp \
 get_system_data_dirs.supp \

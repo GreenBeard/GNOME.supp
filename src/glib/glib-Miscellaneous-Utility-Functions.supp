@@ -3,14 +3,6 @@
 # https://developer.gnome.org/glib/stable/glib-Miscellaneous-Utility-Functions.html
 
 {
-   g_get_application_name()
-   Memcheck:Leak
-   match-leak-kinds: reachable
-   ...
-   fun:g_get_application_name
-}
-
-{
    g_get_home_dir()
    Memcheck:Leak
    match-leak-kinds: reachable
@@ -24,14 +16,6 @@
    match-leak-kinds: reachable
    ...
    fun:g_get_host_name
-}
-
-{
-   g_get_prgname()
-   Memcheck:Leak
-   match-leak-kinds: reachable
-   ...
-   fun:g_get_prgname
 }
 
 {
