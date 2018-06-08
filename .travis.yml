@@ -1,0 +1,12 @@
+sudo: false
+addons:
+  apt:
+    packages:
+      - libaugeas-dev
+      - libglib2.0-0-dbgsym
+      - valgrind
+language: rust
+script:
+  - git clone https://github.com/dtrebbien/valgrind_suppressions_util.git
+  - cd valgrind_suppressions_util; cargo install
+  - make test
